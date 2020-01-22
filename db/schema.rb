@@ -10,12 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_22_181517) do
+ActiveRecord::Schema.define(version: 2020_01_22_191609) do
 
   create_table "assignments", force: :cascade do |t|
     t.string "assignment_name"
     t.string "description"
     t.string "submission"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.string "course_name"
+    t.string "description"
+    t.boolean "submission"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
