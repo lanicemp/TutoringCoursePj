@@ -4,28 +4,13 @@
 <h3>Welcome to Tutoring courses where you are able to create your own assignments<br>
  and courses to share with other Tutoring Course users.</h3>
  
-   <h5>Please select one of the options below to get started</h5>
-
-   <p> The create a Course 
-   <li>leads to the Course Form</li> </p>
-   
-   <% if user_signed_in? %>
-      <%= form_tag courses_path, :method => 'get' do %> 
-         <p><%= link_to "Create Course", new_course_path %></p>
-         </li>
-       <% end %>
-   <% end %>
-   
-
-<p>Search existing courses 
-   <li>leads to the index of courses </li>
-   <li>where the user is able ot search 
-   the existing courses </li>
-   <li>and find the assignments that are associated with the course. </li></p>
-   <% if user_signed_in? %>
+   <h4>Please select one of the options below to get started</h4>
+  
+   <p><%= link_to "Create Course", new_course_path %></p>
+        
        
-         <p><%= link_to "Search Courses", courses_path %></p>
-         </li>
+   <p><%= link_to "Search Courses", courses_path %></p>
+         <
        
-   <% end %>
+  
 
