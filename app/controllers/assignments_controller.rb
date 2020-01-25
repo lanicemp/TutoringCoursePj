@@ -7,23 +7,23 @@ class AssignmentsController < ApplicationController
     end
     
     def index
-    @assignments = Assignment.all
+        @assignments = Assignment.all
     end
 
     def new
-    @assignment = Assignment.new
+        @assignment = Assignment.new
     # @assignment.courses.build
 
     end
 
     def create
-    assignment = Assignment.create(assignment_params)
-    redirect_to assignment
+        assignment = Assignment.create(assignment_params)
+        redirect_to assignment
     end
 
     private
 
-    def post_params
+    def assignment_params
     params.require(:assignment).permit(:title, :content, course_ids:[], :course_attributes => [:name])
     end
 end
