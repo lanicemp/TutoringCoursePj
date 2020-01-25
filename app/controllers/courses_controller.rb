@@ -11,19 +11,29 @@ class CoursesController < ApplicationController
     end 
 
     def new
-    @course = Course.new
-    # @assignment.courses.build
+        @course = Course.new
+       
     end
 
     def create
     course = Course.create(course_params)
-    redirect_to course
+        if @course.save 
+            redirect_to @course
+        else render:new
+        end 
+    end
+
+    def destroy
+        @course =   Course.find(params[:id])
+        @course.destroy
+        flash[:notice] = "Course deleted."
+        redirect_to courses_path
     end
 
     private
 
     def course_params
-    params.require(:course).permit(:title, :content, course_ids:[], :course_attributes => [:name])
+        params.require(:course).permit(:course_name, :descripton, :content, course_ids:[], :course_attributes => [:name])
     end
 
 
