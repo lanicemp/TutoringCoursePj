@@ -23,9 +23,9 @@
    the existing courses </li>
    <li>and find the assignments that are associated with the course. </li></p>
    <% if user_signed_in? %>
-      <%= index_tag courses_path, :method => 'get' do %> 
-         <p><%= link_to "Search Courses", index_course_path %></p>
+       
+         <p><%= link_to "Search Courses", courses_path %></p>
          </li>
-       <% end %>
+       
    <% end %>
 
