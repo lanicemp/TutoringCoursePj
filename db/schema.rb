@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_25_024343) do
+ActiveRecord::Schema.define(version: 2020_01_25_203227) do
 
   create_table "assignments", force: :cascade do |t|
     t.string "assignment_name"
@@ -18,6 +18,9 @@ ActiveRecord::Schema.define(version: 2020_01_25_024343) do
     t.string "submission"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "q_1"
+    t.string "q_2"
+    t.string "q_3"
   end
 
   create_table "courses", force: :cascade do |t|
@@ -26,22 +29,25 @@ ActiveRecord::Schema.define(version: 2020_01_25_024343) do
     t.boolean "submission"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "teacher_id"
+    t.bigint "teacher_id"
   end
 
   create_table "enrollments", force: :cascade do |t|
-    t.string "user_id"
-    t.string "course_id"
+    t.integer "user_id"
+    t.bigint "course_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "submissions", force: :cascade do |t|
-    t.string "user_id"
-    t.string "assignment_id"
+    t.bigint "user_id"
+    t.integer "assignment_id"
     t.string "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "a_1"
+    t.string "a_2"
+    t.string "a_3"
   end
 
   create_table "users", force: :cascade do |t|
