@@ -1,0 +1,30 @@
+<h1> Create a Course </h1>
+
+<p>Only a signed in user will be able to create a course </p>
+
+<p>In the course form the user will be able to  create a course with a </p>
+<h3>Create a Course></h3>
+<ul>title:_____</ul> 
+<ul>description:____</ul>
+<div class=post-content>
+  <%= @post.content %>
+</div>
+<%= form_for course do |f| %>
+  <%= f.label "Title" %>
+  <%= f.text_field :title %>
+  <%= f.label "Content" %>
+  <%= f.text_area :content %>
+    <%= f.submit %>
+<% end %>
+
+<h3>Create an Assignment</h3>
+    <p>this leads to the assignment form to create an assignment</p>
+    <% if user_signed_in? %>
+      <%= form_tag assignments_path, :method => 'get' do %> 
+         <p><%= link_to "Create Assignment", new_assignment_path %></p>
+         </li>
+       <% end %>
+   <% end %>
+	
+<p>then submit </p>
+

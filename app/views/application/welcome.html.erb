@@ -6,19 +6,15 @@
  
    <h5>Please select one of the options below to get started</h5>
 
-   <p> The create assignment for Course 
-   <li>leads to the Assignment Form</li> </p><br>
+   <p> The create a Course 
+   <li>leads to the Course Form</li> </p>
+   
    <% if user_signed_in? %>
-<%= form_tag assignments_path, :method => 'get' do %> 
-   <h4><%= link_to "Create Assignment", new_assignment_path %></h4>
-    <%= submit_tag "Create Assignment" %> </h4>
+      <%= form_tag courses_path, :method => 'get' do %> 
+         <p><%= link_to "Create Course", new_course_path %></p>
+         </li>
+       <% end %>
    <% end %>
-   <% end %>
-
-<p>Search an Existing assignment
-   <li>leads to the index of assignments </li>
-   <li>so the user can me able to choose 
-   an existing assignment to complete </li></p><br>
    
 
 <p>Search existing courses 
@@ -26,4 +22,10 @@
    <li>where the user is able ot search 
    the existing courses </li>
    <li>and find the assignments that are associated with the course. </li></p>
+   <% if user_signed_in? %>
+      <%= index_tag courses_path, :method => 'get' do %> 
+         <p><%= link_to "Search Courses", index_course_path %></p>
+         </li>
+       <% end %>
+   <% end %>
 
