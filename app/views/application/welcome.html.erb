@@ -8,6 +8,12 @@
 
    <p> The create assignment for Course 
    <li>leads to the Assignment Form</li> </p><br>
+   <% if user_signed_in? %>
+<%= form_tag assignments_path, :method => 'get' do %> 
+   <h4><%= link_to "Create Assignment", new_assignment_path %></h4>
+    <%= submit_tag "Create Assignment" %> </h4>
+   <% end %>
+   <% end %>
 
 <p>Search an Existing assignment
    <li>leads to the index of assignments </li>
