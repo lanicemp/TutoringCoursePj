@@ -1,5 +1,5 @@
 class Enrollment < ApplicationRecord
-    belongs_to :student, source: :user 
+    belongs_to :student, class_name: :user
     belongs_to :course
 
 
