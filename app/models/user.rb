@@ -4,6 +4,7 @@ class User < ApplicationRecord
 
 has_many :enrollments
 has_many :courses, through: :enrollments
+has_many :courses_as_teacher, class_name: "Course", foreign_key: :teacher_id
 has_many :assignments, through: :courses
 has_many :submissions
 has_many :submitted_assignments, through: :submissions, source: :assignment
