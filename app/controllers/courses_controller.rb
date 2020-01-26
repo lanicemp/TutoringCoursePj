@@ -16,11 +16,18 @@ class CoursesController < ApplicationController
     end
 
     def create
-    course = Course.create(course_params)
-        if @course.save 
-            redirect_to @course
-        else render:new
+        
+    @course = current_user.courses_as_teacher.create(course_params)
+    
+        if @course.save
+            
+            redirect_to new_assignment_path
+        else 
+            binding.pry
+            redirect_to  new_course_path  
         end 
+
+       
     end
 
     def destroy
@@ -33,9 +40,9 @@ class CoursesController < ApplicationController
     private
 
     def course_params
-        params.require(:course).permit(:course_name, :descripton, :content, course_ids:[], :course_attributes => [:name])
+        params.require(:course).permit(:course_name, :description, :teacher_id)
     end
 
-
+    # , course_ids:[], :course_attributes => [:name]
     
 end
