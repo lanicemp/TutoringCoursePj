@@ -1,1 +1,6 @@
 <h1> Made it to the Assignment Index Page </h1>
+
+<% @assignments.each do |assignment|%>
+    
+    <li> Name: <%= link_to assignment.assignment_name, assignment_path(course)%>
+<% end %>

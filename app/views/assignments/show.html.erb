@@ -1,1 +1,21 @@
 <h1> Made it to the Assignment show page </h1>
+
+<%= form_for (@assignment) do |f| %>
+<% binding.pry %>
+    <%= f.label :assignment_name %>
+    <%=  %><br>
+    <br>
+    <%= f.label :description %><br>
+    <%=  %><br>
+    <br>
+    <%= f.label :answer_1 %><br>
+    <%= f.text_area :a_1  %><br>
+    <br>
+    <%= f.label :answer_2 %><br>
+    <%= f.text_area  :a_2  %><br>
+    <br>
+    <%= f.label :answer_3 %><br>
+    <%= f.text_area :a_3  %><br>
+    <br>
+    <%= f.submit %>
+<% end %>
