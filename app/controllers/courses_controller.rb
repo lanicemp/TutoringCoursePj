@@ -8,6 +8,7 @@ class CoursesController < ApplicationController
 
     def index
         @courses = Course.all
+        
     end 
 
     def new
@@ -17,13 +18,13 @@ class CoursesController < ApplicationController
 
     def create
         
-    @course = current_user.courses_as_teacher.create(course_params)
+        @course = current_user.courses_as_teacher.create(course_params)
     
         if @course.save
             
-            redirect_to new_assignment_path
+            redirect_to new_course_assignment_path(@course)
         else 
-            binding.pry
+            
             redirect_to  new_course_path  
         end 
 
