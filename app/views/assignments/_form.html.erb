@@ -1,9 +1,11 @@
-<h1> Made it to the Assignemnt Form Page </h1>
+<h1> Made it to the Assignment Form Page </h1>
 
 <p> Assignment Form </p>
 <p>Only a signed in user will be able to create an assignment</p>
 
 <%= form_for (@assignment) do |f| %>
+    
+    <%= f.hidden_field :course_id %>
 
     <%= f.label :assignment_name %>
     <%= f.text_field :assignment_name %><br>
@@ -20,8 +22,12 @@
     <%= f.label :question_3 %><br>
     <%= f.text_area :q_3  %><br>
     <br>
+
     <%= f.submit %>
 <% end %>
-
+<p> Create a conditional logic to see if im on the nested route if so 
+collect the course id from the url and place in the hidden field 
+If not have the collection select option avaliable for the courses </p>
+<br>
 <p>shovels this new assignment into the list of the assignments 
 for this course.</p> 
