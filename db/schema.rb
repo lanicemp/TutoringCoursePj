@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_25_203227) do
+ActiveRecord::Schema.define(version: 2020_01_27_212224) do
 
   create_table "assignments", force: :cascade do |t|
     t.string "assignment_name"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 2020_01_25_203227) do
     t.string "q_1"
     t.string "q_2"
     t.string "q_3"
+    t.integer "course_id"
+    # thinking to add user_id 
   end
 
   create_table "courses", force: :cascade do |t|
@@ -61,6 +63,7 @@ ActiveRecord::Schema.define(version: 2020_01_25_203227) do
     t.string "username"
     t.string "provider"
     t.string "uid"
+    t.integer "teacher_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
