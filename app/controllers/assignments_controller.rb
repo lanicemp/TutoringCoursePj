@@ -18,12 +18,12 @@ class AssignmentsController < ApplicationController
     end
 
     def create
-binding.pry
-        @assignment = current_user.assignments_as_teacher.create(assignment_params)
+
+        @assignment = Assignment.create(assignment_params)
     
         if @assignment.save
             
-            redirect_to new_assignment_path
+            redirect_to course_assignments_path(@assignment)
         else 
             binding.pry
             redirect_to  course_path 
