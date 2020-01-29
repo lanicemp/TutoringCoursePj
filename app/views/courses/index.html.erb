@@ -3,5 +3,5 @@
 <% @courses.each do |course|%>
   
    
-    <li> <%= link_to course.course_name, course_assignment_path(course)%>
+    <li> <%= link_to course.course_name, course_assignments_path(course)%>
 <% end %>
