@@ -20,7 +20,7 @@ class AssignmentsController < ApplicationController
     def create
 
         @assignment = Assignment.create(assignment_params)
-    
+    binding.pry 
         if @assignment.save
             
             redirect_to course_assignments_path(@assignment)
