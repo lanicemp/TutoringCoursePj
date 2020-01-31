@@ -10,7 +10,7 @@ class Course < ApplicationRecord
     end 
 
     # accepts_nested_attributes_for :assignments, reject_if: :all_blank
-    # accepts_nested_attributes_for :teacher reject_if: :all_blank
+    # accepts_nested_attributes@_for :teacher reject_if: :all_blank
 
     # validates :content, presence: true
     # validates :content, length: { minimum: 10 }
