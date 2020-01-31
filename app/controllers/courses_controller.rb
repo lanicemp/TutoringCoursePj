@@ -21,10 +21,10 @@ class CoursesController < ApplicationController
         @course = current_user.courses_as_teacher.create(course_params)
     
         if @course.save
-            
+            flash[:success] = "Your Course has been Created!!"
             redirect_to new_course_assignment_path(@course)
         else 
-            
+            flash[:error] = "Error Try again!!"
             redirect_to  new_course_path  
         end 
 
