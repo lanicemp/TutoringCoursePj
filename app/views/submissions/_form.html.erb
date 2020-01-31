@@ -1,13 +1,21 @@
 
+<h1><%= @assignment.assignment_name %></h1>
+<h3><%= @assignment.description %></h3>
 
 
-<%= f.label :answer_1 %><br>
-    <%= f.text_area :a_1  %><br>
+
+<%= form_for (@submission) do |f| %>
+  <% binding.pry %> 
+    <%=  f.hidden_field :user_id %>
+    <%=  f.hidden_field :assignment_id %>
+    <%= @assignment.q_1 %><br>
+    <%= f.text_area :a_1, placeholder: "type your answer here", class: "text"   %><br>
     <br>
-    <%= f.label :answer_2 %><br>
-    <%= f.text_area  :a_2  %><br>
+    <%= @assignment.q_2%><br>
+    <%= f.text_area  :a_2, placeholder: "type your answer here", class: "text"   %><br>
     <br>
-    <%= f.label :answer_3 %><br>
-    <%= f.text_area :a_3  %><br>
+    <%= @assignment.q_3 %><br>
+    <%= f.text_area :a_3, placeholder: "type your answer here", class: "text"    %><br>
     <br>
     <%= f.submit %>
+    <% end %>
