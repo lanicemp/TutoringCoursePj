@@ -1,9 +1,22 @@
 <h1> Made it to the Assignment Index Page </h1>
-
+<ul>
 <% @assignments.each do |assignment|%>
-   
-    
-    <li> Name: <%= link_to assignment.assignment_name, assignment_path(assignment)%>
-<% end %><br>
 
-<br>
+    <li> Name: <%= link_to assignment.assignment_name, assignment_path(assignment)%></li>
+   
+<% end %>
+</ul>
+
+<% if @teacher %>
+    <h3> Create a new assignment for work with this Course. </h3>
+<% #binding.pry %>
+  <li> <a href="/courses/<%=@course.id%>/assignments/new">Add Assignment</a></li>
+   
+
+<% end %>
+
+Add an enrollement button to have the user be able to view the indiviual assignments for this course. 
+should a student user be given an enrollement id 
+of maybe it should be if the course has this students id if the enrollment id should be an array of intgers 
+because a student can be enrolled in many courses which means the user will have various enrollment 
+ids. 
