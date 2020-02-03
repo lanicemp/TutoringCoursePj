@@ -7,7 +7,19 @@ class AssignmentsController < ApplicationController
     end
     
     def index
-        @assignments = Assignment.all
+         
+
+
+       if params[:course_id]
+            @course = Course.find(params[:course_id]) 
+            @assignments = @course.assignments
+            @teacher = @course.teacher == current_user
+       else 
+            @assignments = Assignment.all
+       end 
+
+
+
     end
 
     def new
@@ -20,13 +32,13 @@ class AssignmentsController < ApplicationController
     def create
 
         @assignment = Assignment.create(assignment_params)
-    binding.pry 
+  
         if @assignment.save
             
             redirect_to course_assignments_path(@assignment)
         else 
-            binding.pry
-            redirect_to  course_path 
+            
+            render  new_course_assignment_path
         end 
 
 
