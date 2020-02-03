@@ -28,9 +28,9 @@ class SubmissionsController < ApplicationController
         @submission.user_id = current_user.id
         if @submission.save
             flash[:success] = "Your Assignment has been Submitted!!"
-            redirect_to new_course_assignment_path(@submission)
+            redirect_to course_assignment_path(@submission)
         else 
-            binding.pry 
+            
             flash[:error] = "Your Assignment has Not Submitted."
             redirect_to  new_course_path  
         end 
