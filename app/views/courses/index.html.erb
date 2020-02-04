@@ -1,7 +1,11 @@
 <h1> Courses Index</h1>
 <ul>
+<div>
 <% @courses.each do |course|%>
   
    
     <li> <%= link_to course.course_name, course_assignments_path(course)%>
+    
 <% end %>
+</div>
+</ul>
