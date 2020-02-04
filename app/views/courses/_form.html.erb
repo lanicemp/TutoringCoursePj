@@ -1,9 +1,5 @@
-<h1> Create a Course </h1>
-
-<p>Complete the fields below to create a course </p>
 
 <%= form_for (@course) do |f| %>
-
     
     <%= f.label :course_name %>
     <%= f.text_field :course_name %><br>
@@ -13,8 +9,6 @@
     <br>
     <%= f.hidden_field :teacher_id  %><br>
     <br>
-
-
     <%= f.submit %>
 <% end %>	
 

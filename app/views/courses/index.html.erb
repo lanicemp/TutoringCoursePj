@@ -4,7 +4,9 @@
 <% @courses.each do |course|%>
   
    
+
     <li> <%= link_to course.course_name, course_assignments_path(course)%>
+     <p><%= link_to "Enroll", new_course_enrollment_path(course) %></p>
     
 <% end %>
 </div>
