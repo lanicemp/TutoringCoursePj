@@ -7,9 +7,6 @@ class AssignmentsController < ApplicationController
     end
     
     def index
-         
-
-
        if params[:course_id]
             @course = Course.find(params[:course_id]) 
             @assignments = @course.assignments
@@ -17,8 +14,6 @@ class AssignmentsController < ApplicationController
        else 
             @assignments = Assignment.all
        end 
-
-
 
     end
 
