@@ -2,7 +2,7 @@
 <ul>
 <% @assignments.each do |assignment|%>
 
-    <li> Name: <%= link_to assignment.assignment_name, assignment_path(assignment)%></li>
+    <li> Name: <%= link_to assignment.assignment_name, assignment_path(assignment), class: 'btn btn-success'%></li>
    
 <% end %>
 </ul>
