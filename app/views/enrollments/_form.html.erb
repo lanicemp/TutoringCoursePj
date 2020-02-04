@@ -1,0 +1,10 @@
+made it to the form 
+for a nested resource 
+<%= form_for [course, enrollment] do |f| %>
+
+    
+    <%= f.hidden_field :user_id  %><br>
+    <%= f.hidden_field :course_id  %><br>
+    <br>
+    <%= f.submit %>
+<%end %>
