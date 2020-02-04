@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   resources :submissions
-  resources :enrollments
-
+  
   resources :courses do 
     resources :assignments
+    resources :enrollments
   end 
   resources :assignments, except: :index 
   
