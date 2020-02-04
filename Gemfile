@@ -31,7 +31,8 @@ gem 'devise'
 gem 'omniauth-github'
 gem 'pry'
 gem 'dotenv-rails'
-
+gem 'jquery-rails'
+gem 'simple_form'
 gem 'bootstrap', '~> 4.4.1'
 
 
