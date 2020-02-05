@@ -5,6 +5,11 @@ class ApplicationController < ActionController::Base
     
     helpers do 
 
+         
+        def set_course
+            @course = Course.find(params[:course_id])
+        end   
+
     end 
 
        
