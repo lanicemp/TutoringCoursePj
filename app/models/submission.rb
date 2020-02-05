@@ -4,6 +4,7 @@ class Submission < ApplicationRecord
     belongs_to :assignment
 
     scope :by_user, ->(user) { where( user_id: user.id)}
+    #validates :assignment_name, :presence => true, uniqueness: {scope: [:course_id ]} 
 
 
 end
