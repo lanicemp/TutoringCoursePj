@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
 
-has_many :enrollments, foreign_key: :user_id
+has_many :enrollments
 has_many :courses, through: :enrollments
 has_many :courses_as_teacher, class_name: "Course", foreign_key: :teacher_id
 
