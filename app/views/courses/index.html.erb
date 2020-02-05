@@ -5,8 +5,8 @@
   
    
 
-    <li> <%= link_to course.course_name, course_assignments_path(course)%>
-     <p><%= link_to "Enroll", new_course_enrollment_path(course) %></p>
+    <li> <%= link_to course.course_name, course_assignments_path(course)%><br>
+     <%= link_to "Enroll", new_course_enrollment_path(course) %></li><br>
     
 <% end %>
 </div>
