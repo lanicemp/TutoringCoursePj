@@ -2,13 +2,15 @@ class AssignmentsController < ApplicationController
     
     before_action :authenticate_user!
     
+
     def show
         @assignment = Assignment.find_by(id: params[:id])
     end
     
     def index
+        
        if params[:course_id]
-            set_course 
+            set_course
             @assignments = @course.assignments
             @teacher = @course.teacher == current_user
        else 
@@ -29,11 +31,11 @@ class AssignmentsController < ApplicationController
         @assignment = Assignment.create(assignment_params)
   
         if @assignment.save
-            
+            flash[:success] = "Your Assignment has been Created!!"
             redirect_to course_assignments_path(@assignment)
         else 
-            
-            render  new_course_assignment_path
+            flash[:error] = "This Assignment !!"
+            render  new
         end 
 
 
