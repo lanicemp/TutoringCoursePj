@@ -8,7 +8,7 @@ class AssignmentsController < ApplicationController
     
     def index
        if params[:course_id]
-            @course = Course.find(params[:course_id]) 
+            set_course 
             @assignments = @course.assignments
             @teacher = @course.teacher == current_user
        else 
@@ -45,6 +45,10 @@ class AssignmentsController < ApplicationController
     params.require(:assignment).permit(:assignment_name, :description, :q_1, :q_2, :q_3, :course_id)
     # :course_attributes => [:name]
     end
+
+    def set_course
+        @course = Course.find(params[:course_id])
+    end 
 end
   
     
