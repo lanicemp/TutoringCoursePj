@@ -7,14 +7,16 @@ class EnrollmentsController < ApplicationController
        
     end
 
-    def create
-        binding.pry 
+    def create 
         @enrollment = current_user.enrollments.build(enrollment_params)
-        @enrollment.student_id = current_user.id
+        @enrollment.user_id = current_user.id
+        #@course = Course.find(params[:course_id])
+        set_course
 
         if @enrollment.save
             flash[:success] = "Your Enrolled!!"
-            redirect_to new_course_assignment_path(@enrollment)
+            
+            redirect_to course_assignments_path(@course)
         else 
             flash[:error] = "Error Try again!!"
             redirect_to  new_course_path  
@@ -36,12 +38,12 @@ class EnrollmentsController < ApplicationController
     private 
 
     def enrollment_params
-        params.require(:enrollment).permit(:course_id, :student_id)
+        params.require(:enrollment).permit(:course_id, :user_id)
     end
     
-    def set_course
-        @course = Course.find(params[:course_id])
-    end 
+     def set_course
+         @course = Course.find(params[:course_id])
+     end 
     #validattion on the assignmets to put a vaildation that the student is enrolled
     #
 
