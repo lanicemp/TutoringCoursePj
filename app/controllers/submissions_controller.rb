@@ -28,7 +28,7 @@ class SubmissionsController < ApplicationController
         @submission.user_id = current_user.id
         if @submission.save
             flash[:success] = "Your Assignment has been Submitted!!"
-            redirect_to course_assignment_path(@submission)
+            redirect_to root_path 
         else 
             
             flash[:error] = "Your Assignment has Not Submitted."
@@ -49,5 +49,9 @@ class SubmissionsController < ApplicationController
 
     def submission_params
         params.require(:submission).permit(:a_1, :a_2, :a_3, :assignment_id, :user_id)
+    end
+
+    def set_course
+        @course = Course.find(params[:course_id])
     end
 end
