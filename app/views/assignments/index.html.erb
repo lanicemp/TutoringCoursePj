@@ -1,24 +1,18 @@
-<h1> Made it to the Assignment Index Page </h1>
+<h1> Welcome to Assignment Index</h1>
+
 <ul>
-<% @assignments.each do |assignment|%>
-<%binding.pry %>
-    <li> Name: <%= link_to assignment.assignment_name, assignment_path(assignment), class: 'btn btn-success'%></li>
-  
-     <% if submission = assignment.submissions.by_user(current_user).first %>
-     Submitted Assignment
-      <%= #link_to "Submitted Assignment", assignment_submission_path(assigntment) %>
-     <% end %>
-     
-  
-<% end %>
-</ul>
-
-<% if @teacher %>
-    <h3> Create a new assignment for this Course. </h3>
-<% #binding.pry %>
-  <li> <a href="/courses/<%=@course.id%>/assignments/new">Add Assignment</a></li>
    
+    <% @assignments.each do |assignment| %>
+        <li>Name: <%= link_to assignment.assignment_name, assignment_path(assignment), class: 'btn btn-success'%> </li>
+
+        <% if submission = assignment.submissions.by_user(current_user).first%>
+       
+         <%= link_to "Submitted Assignemnt", assignment_submission_path(assignment, submission) %> 
+        <% end %>
+    <% end %>
+</ul>
+<% if @teacher %>
+    Create a new assignment for this Course
+    <%= link_to "Add Assignment", new_course_assignment_path(@course)%> 
 
 <% end %>
-
-
