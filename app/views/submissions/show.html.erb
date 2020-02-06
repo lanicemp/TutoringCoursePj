@@ -1,9 +1,22 @@
-<% binding.pry %>
-<h1> <%= @assignment.assignment_name %></h1>
-<h2><%= @assignment.description %></h2><br>
 
-<li><%= @assignment. q_1%><br>
-<%= @submission.a_1 %></li>
 
-<li><%= @assignment. q_2%></li>
-<li><%= @assignment. q_3%></li>
+    <h1><center> Welcome <%=current_user.username%></center> </h1>
+    <h3><center> Below is your Submitted Assignment</center> </h3>
+    <h2><center> <%= @assignment.assignment_name %></center></h2>
+    <h4><center> <%= @assignment.description %></center></h4><br>
+    
+<div class= container>
+<li><%= @assignment.q_1%><br>
+    Your response: <%= @submission.a_1 %></li><br>
+
+<br>
+
+<li><%= @assignment.q_2%><br>
+    Your response: <%= @submission.a_2%></li><br>
+<br>
+
+<li><%= @assignment.q_3%><br>
+    Your response: <%= @submission.a_3%></li><br>
+</div><br>
+    <br>
+</body>
