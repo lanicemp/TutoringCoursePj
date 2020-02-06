@@ -14,7 +14,65 @@
  *= require_self
  */
 //  @import "bootstrap";
- 
+
+body {
+  margin: 50;
+  background: rgb(255, 255, 255);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 300;
+}
+.container {
+  width:  100%;
+  margin: 20 auto;
+}
+
+header{
+  background: rgb(174, 252, 255);
+} 
+
+header::after {
+  content: '';
+  display: table;
+  clear: both; 
+}
+
+.logo {
+  float: left;
+}
+nav {
+  float: center;
+}
+nav ul {
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 70px;
+  padding-top: 23px;
+}
+nav a {
+  color:  rgb(11, 9, 92);
+  text-decoration: none;
+  text-transform: capitalize;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: #000000;
+
+}
+nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: #444;
+}
+
+
  field_with_errors {
     padding: 2px;
     background-color: red;
@@ -29,8 +87,14 @@
     background-color: #f0f0f0;
   }
 
-  body {
-    background-color: rgb(193, 231, 229);
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:  rgb(174, 252, 255);
+    color: rgb(11, 9, 92);
+    text-align: center;
   }
 
 //   .nav_bar ul {
