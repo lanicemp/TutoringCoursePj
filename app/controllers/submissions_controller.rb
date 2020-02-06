@@ -4,11 +4,18 @@ class SubmissionsController < ApplicationController
 
     def show 
         @submission = Submission.find_by(id: params[:id])
+        set_assignment
+      
     end 
 
     def index
-        @submissions = Submission.all
         
+        if params[:user_id]
+            set_course
+            @assignments = @course.assignments
+        else 
+        @submissions = Submission.all  
+        end 
     end 
 
     def new
@@ -28,7 +35,7 @@ class SubmissionsController < ApplicationController
         @submission.user_id = current_user.id
         if @submission.save
             flash[:success] = "Your Assignment has been Submitted!!"
-            redirect_to root_path 
+            redirect_to courses_path
         else 
             
             flash[:error] = "Your Assignment has Not Submitted."
@@ -51,7 +58,7 @@ class SubmissionsController < ApplicationController
         params.require(:submission).permit(:a_1, :a_2, :a_3, :assignment_id, :user_id)
     end
 
-    def set_course
-        @course = Course.find(params[:course_id])
+    def set_assignment
+        @assignment  = Assignment.find(params[:assignment_id]) 
     end
 end
