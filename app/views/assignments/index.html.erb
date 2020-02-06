@@ -1,5 +1,11 @@
-<h1> Welcome to Assignment Index</h1>
+<center><h1> Welcome to Assignment Index</h1>
 
+<% if @teacher %>
+    <%= current_user.username %> <br> Welcome Back!! <br> Would you like to Create a new assignment for this Course?<br>
+    <%= link_to "Add Assignment", new_course_assignment_path(@course)%> 
+
+<% end %>
+</center>
 <ul>
    
     <% @assignments.each do |assignment| %>
@@ -11,8 +17,7 @@
         <% end %>
     <% end %>
 </ul>
-<% if @teacher %>
-    Create a new assignment for this Course
-    <%= link_to "Add Assignment", new_course_assignment_path(@course)%> 
+<br>
+<br>
+<br>
 
-<% end %>
