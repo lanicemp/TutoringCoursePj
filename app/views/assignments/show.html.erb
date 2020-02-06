@@ -1,10 +1,13 @@
+<center>
+    <h1> <%= @assignment.assignment_name %></h1>
+    <h2><%= @assignment.description%></h2><br>
 
-<h1> <%= @assignment.assignment_name %></h1>
-<h2><%= @assignment.description%></h2><br>
-
-<li><%= @assignment. q_1%></li>
-<li><%= @assignment. q_2%></li>
-<li><%= @assignment. q_3%></li>
-
-
-<%=link_to 'Complete Assignment', {:controller => "submissions", :action => "new", :assignment_id => @assignment.id }%>
+    <fieldset>
+        <legend>Quetions</legend>
+            <li><%= @assignment. q_1%></li>
+            <li><%= @assignment. q_2%></li>
+            <li><%= @assignment. q_3%></li>
+    </fieldset>
+    <br>
+    <%=link_to 'Complete Assignment', {:controller => "submissions", :action => "new", :assignment_id => @assignment.id }%>
+</center}

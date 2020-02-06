@@ -12,8 +12,7 @@
         <li>Name: <%= link_to assignment.assignment_name, assignment_path(assignment), class: 'btn btn-success'%> </li>
 
         <% if submission = assignment.submissions.by_user(current_user).first%>
-       
-         <%= link_to "Submitted Assignemnt", assignment_submission_path(assignment, submission) %> 
+            <%= link_to "Submitted Assignemnt", assignment_submission_path(assignment, submission) %> 
         <% end %>
     <% end %>
 </ul>
