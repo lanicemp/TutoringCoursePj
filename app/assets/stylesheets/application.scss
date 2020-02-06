@@ -23,7 +23,7 @@ body {
 }
 .container {
   width:  100%;
-  margin: 20 auto;
+  margin: 10 auto;
 }
 
 header{
@@ -51,8 +51,8 @@ nav ul {
 
 nav li {
   display: inline-block;
-  margin-left: 70px;
-  padding-top: 23px;
+  margin-left: 100px;
+  padding-top: 0px;
 }
 nav a {
   color:  rgb(11, 9, 92);
@@ -71,7 +71,13 @@ nav a::before {
   height: 5px;
   background-color: #444;
 }
-
+.logo-image{
+  width: 50px;
+  height: 50px;
+  border-radius: 40%;
+  overflow: hidden;
+  margin-top: 0px;
+}
 
  field_with_errors {
     padding: 2px;
