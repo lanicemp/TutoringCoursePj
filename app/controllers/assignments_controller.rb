@@ -29,12 +29,12 @@ class AssignmentsController < ApplicationController
     def create
 
         @assignment = Assignment.create(assignment_params)
-  
+        
         if @assignment.save
             flash[:success] = "Your Assignment has been Created!!"
-            redirect_to course_assignments_path(@assignment)
+            redirect_to course_assignments_path(@assignment.course)
         else 
-            flash[:error] = "This Assignment !!"
+            flash[:error] = "Error !!"
             render  new
         end 
 
